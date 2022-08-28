@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+    <p>There are many variations of passages of Lorem Ipsum available,
+        but the majority have suffered alteration in some form,
+        by injected humour, or randomised words which don't look even 
+        slightly believable.</p>
+    <p id="teste">Parágrafo teste</p>
+    <p class="p-yellow">Outro Parágrafo</p>
+
+    <script src="/js/jquery-3.6.1.js"></script>
+
+    <script>
+
+        //Selecionou todos o parágrafos
+
+        $(document).ready(function(){
+            $('p').html('Inserido com jQuery')
+        })
+
+        //Selecionando por id
+
+        $(document).ready(function(){
+            $("#teste").html('Inserindo o jQuery')
+        })
+
+        // Selecionando pela classe
+
+        $(document).ready(function(){
+            $(".p-yellow").html('Yellow')
+        })
+
+        // Selecionado o parágrafo e a classe
+
+        $(document).ready(function(){
+            $("p.p-yellow").html('Yellow')
+        })
+
+    </script>
+
+</body>
+</html>
