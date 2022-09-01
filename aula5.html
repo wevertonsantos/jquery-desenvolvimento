@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        .d-inline{
+            display: inline-block;
+            height: 150px;
+            width: 150px;
+        }
+
+        .red{
+            background-color: red;
+        }
+
+        .blue{
+            background-color: blue;
+        }
+
+        .green{
+            background-color: green;
+        }
+
+        .black{
+            background-color: black;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+
+    </style>
+
+    <div class="d-inline red"></div>
+    <div class="d-inline blue"></div>
+    <div class="d-inline green"></div>
+    <div class="d-inline black"></div>
+    <div class="d-inline orange"></div>
+    <div class="d-inline yellow"></div>
+
+    <hr>
+
+    <button id="botaoHide">Ocultar</button>
+    <button id="botaoShow">Mostrar</button>
+    <button id="botaoToggle">Clique Aqui T</button>
+    <button id="botaoFadeOut">FadeOut</button>
+    <button id="botaoFadeIn">FadeIn</button>
+    <button id="botaoFadeToggle">FadeToggle</button>
+
+    <script src="/js/jquery-3.6.1.js"></script>
+
+    <script>
+
+        /* Efeitos visuais e métodos com jQuery*/
+
+        // Métodos .show, .hide (Mostrar e ocultar) //
+
+        // .hide(1000) ou .hide('fast'/'slow')
+        // .show(1000) ou .show('fast'/'slow')
+        // callback .hide/.show(2000, function(){})
+
+        //Clicar no botão hide irá ocultar o bloco blue
+         $(document).ready(function(){
+            $('#botaoHide').click(function(){
+                $('.blue').hide('slow', function(){
+                    alert('Terminou de esconder')
+                })
+            })
+         })
+
+         //Clicar no botão show irá mostrar o bloco blue
+        $(document).ready(function(){
+            $('#botaoShow').click(function(){
+                $('.blue').show(1000, function(){
+                    alert('Terminou de mostrar')
+                })
+            })
+        })
+
+        // Método toogle (alternar).
+        // Como se fosse um coringa se tiver mostrando quando clicar irá
+        // ser oculto e quando estiver oculto irá mostrar
+        $(document).ready(function(){
+            $('#botaoToggle').click(function(){
+                $('.black').toggle(2000,function(){
+                    alert('Terminou o evento')
+                })
+            })
+        })
+
+        // fadeOut, fadeIn (elemento sair e entrar no efeito de fade)
+        // fadeToggle (elemento coringa)
+        $(document).ready(function(){
+            $('#botaoFadeOut').click(function(){
+                $('.orange').fadeOut(2000,function(){
+                })
+            })
+        })
+
+        $(document).ready(function(){
+            $('#botaoFadeIn').click(function(){
+                $('.orange').fadeIn(2000,function(){
+                })
+            })
+        })
+
+        $(document).ready(function(){
+            $('#botaoFadeToggle').click(function(){
+                $('.yellow').fadeToggle('slow')
+            })
+        })
+
+    </script>
+
+</body>
+</html>
