@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <p>There are many variations of passages of Lorem Ipsum available,
+        but the majority have suffered alteration in some form,
+        by injected humour, or randomised words which don't look even 
+        slightly believable.</p>
+    <p id="teste">Parágrafo teste</p>
+    <p class="p-yellow">Outro Parágrafo</p>
+    <hr>
+    <button id="botao" style="padding:50px">Clique Aqui</button>
+    <button id="botao2" style="padding:50px; background-color: red;">Clique Aqui</button>
+    <button id="botao3" style="padding:50px; background-color: blue;">Clique Aqui</button>
+    <hr>
+    <input type="text" id="campotexto" style="padding:50px" placeholder="digite algo">
+    <button id="botao4" style="padding:50px;">Clique Aqui</button>
+
+    <script src="/js/jquery-3.6.1.js"></script>
+
+    <script>
+
+        /* Exemplo eventos */
+
+       // Clicando e aparecendo alert
+        $(document).ready(function(){
+            $('#botao').click(function(){
+                alert('Clicou no botão')
+            })
+        })
+
+        // Mudando html com click
+        $(document).ready(function(){
+            $('#teste').click(function(){
+                $(this).html('Mudei quando fui clicado') // Esse elemento this(teste)
+            })
+        })
+
+        // Quando clicar no botão irá esconder todos os parágrafos
+        $(document).ready(function(){
+            $('#botao').click(function(){
+                $('p').hide() // hide(esconder)
+            })
+        })
+
+        // Double click
+            $(document).ready(function(){
+                $('#botao2').dblclick(function(){
+                    $('p').hide()
+                })
+            })
+
+        //Mouse enter (Mouse sobre)
+        $(document).ready(function(){
+            $('#botao2').mouseenter(function(){
+                $(this).html('Ativou o mouse sobre')
+            })
+        })
+
+        //Mouse leave (Mouse ao sair)
+        //(mouseup/mousedown)
+        $(document).ready(function(){
+            $('#botao2').mouseleave(function(){
+                $(this).html('Mouse saiu')
+            })
+        })
+
+        // Mouse sobre - hover(css)
+        // Recebe uma função de hover e outra de saída do hover
+
+        $(document).ready(function(){
+            $('#botao3').hover(function(){
+                $(this).text('Entrou mouse')
+            }, 
+        function(){
+            $(this).text('Saiu o mouse')
+        })
+        })
+
+        //Evento de foco (com css)
+        // .focus() o campo foca ao abrir a página
+        // Primeiro parâmetro css propriedade, segundo parâmetro o valor
+        $(document).ready(function(){
+            $('#campotexto').focus(function(){
+                $(this).css('background-color','blue')
+                $(this).css('color','white')
+            })
+        })
+
+        // blur (Sair do foco do elemento)
+
+        $(document).ready(function(){
+            $('#campotexto').blur(function(){
+                $(this).css('background-color','white')
+            })
+        })
+
+        // Método on
+        // .on('nome do evento'), função que irá ser executada
+
+        $(document).ready(function(){
+            $('#botao').on('click'),function(){
+
+            }
+        })
+
+        // Passando mais de um evento (on) em um elemento
+        $(document).ready(function(){
+            $('#botao4').on({
+                mouseenter: function(){
+                    $(this).css('background-color', 'red')
+                },
+                click: function(){
+                    $(this).css('background-color', 'blue')
+                },
+                mouseleave: function(){
+                    $(this).css('background-color', 'grey')
+                },
+            })
+        })
+
+    </script>
+
+</body>
+</html>
