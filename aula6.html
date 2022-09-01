@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <style>
+
+        .d-inline{
+            display: inline-block;
+            height: 150px;
+            width: 150px;
+            position: absolute;
+        }
+
+
+        .red{
+            background-color: red;
+        }
+
+        #flip, #panel{
+            padding: 5px;
+            text-align: center;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+
+        #panel{
+            padding: 50px;
+        }
+
+    </style>
+
+    <div id="flip">Clique aqui para aparecer o painel</div>
+    <div id="panel">Painel Oculto</div>
+    <hr>
+    <div class="d-inline red"></div>
+
+    <script src="/js/jquery-3.6.1.js"></script>
+
+    <script>
+
+        /* Efeitos visuais e métodos com jQuery*/
+
+        // Efeito slide
+
+        // Slide para baixo deslizando
+
+        // $(document).ready(function(){
+        //     $('#flip').click(function(){
+        //         $('#panel').slideDown('slow')
+        //     })
+        // })
+
+        // Slide para cima deslizando
+
+        // $(document).ready(function(){
+        //     $('#flip').click(function(){
+        //         $('#panel').slideUp('slow')
+        //     })
+        // })
+
+        // Slide coringa (toggle)
+
+        $(document).ready(function(){
+            $('#flip').click(function(){
+                $('#panel').slideToggle('slow')
+            })
+        })
+
+        // Animação (animate)
+        // animate(propriedade css para sofrer alteração) e passa propriedade
+        // absolute, fixed ou relative para a div
+
+        // $(document).ready(function(){
+        //     $('.red').click(function(){
+        //         $('.red').animate({top:'250px'})
+        //     })
+        // })
+
+        // Vários métodos na mesma declaração(encadeamento)
+
+        $(document).ready(function(){
+            $('.red').click(function(){
+                $(this).css('background-color', 'blue').slideUp(2000).slideDown(2000)
+            })
+        })
+
+
+    </script>
+
+</body>
+</html>
