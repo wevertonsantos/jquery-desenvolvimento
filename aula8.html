@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <h1>O jQuery pode manipular o DOM</h1>
+    <h2>DOM = Document Object Model (Modelo de Objeto de Documento)</h2>
+    <p> Em outra palavras é a árvore de elementos do nosso código. O jQuery pode acessar e atualizar dinamicamente
+        o conteúdo, a estrutura e o estilo de um documento.<br>
+        Tudo pode ser modificado, adicionando ou removido usando jQuery
+    </p>
+
+    <input id='texto' type="text" placeholder="Digite algo">
+    <br>
+    <a id="link" href="https://google.com.br">Link para google</a><br><br>
+    <button id="botao">Verificar link</button>
+
+    <br><br>
+
+    <img src="https://cdn2.downdetector.com/static/uploads/logo/Google-new_19.png">
+    <br><br>
+
+    <div id="teste">
+        <p>Parágrafo</p>
+        <p>Parágrafo</p>
+        <p>Parágrafo</p>
+        <p>Parágrafo</p>
+        <p>Parágrafo</p>
+    </div>
+    <br><br>
+    <br><br>
+
+    <hr>
+
+    <button id="botao1">Modificar título h1</button>
+    <br><br>
+    <button id="botao2">Modificar o título h2</button>
+    <br><br>
+    <button id="botao3">Atribuir valor ao input</button>
+    <br><br>
+    <button id="botao4">Trocar o link</button>
+    <br><br>
+    <button id="botao5">Trocar a imagem</button>
+    <br><br>
+    <button id="botao6">Deletar título</button>
+    <br><br>
+    <button id="botao7">Esvaziar div</button>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+
+
+    <script src="/js/jquery-3.6.1.js"></script>
+
+    <script>
+
+        // Manipulação do DOM com jQuery
+
+        // Método append(adicionar algo amais, sem perder o que tinha)
+
+        // $(document).ready(function(){
+        //     $('#botao1').click(function(){
+        //         $('h1').append(' Adicionei esse texto com jQuery')
+        //     })
+        // })
+
+        // Adicionando div com append
+
+        // $(document).ready(function(){
+        //     $('#botao1').click(function(){
+        //         $('body').append('<div style=" margin: 1%; width: 150px; height: 150px; display:inline-block; background:red"></div>')
+        //     })
+        // })
+
+        // Adicionando no início do h1 com prepend
+
+        // $(document).ready(function(){
+        //     $('#botao1').click(function(){
+        //         $('h1').prepend('Adicionei antes do texto ')
+        //     })
+        // })
+
+        // Destruindo itens
+
+        // .remove(deletar) título
+
+        $(document).ready(function(){
+        $('#botao6').click(function(){
+        $('h1').remove()
+            })
+        })
+
+        // .empty(esvaziar) div
+
+        $(document).ready(function(){
+        $('#botao7').click(function(){
+        $('#teste').empty()
+            })
+        })
+
+    </script>
+
+</body>
+</html>
